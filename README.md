@@ -37,6 +37,33 @@ pantheon/
 
 ---
 
+Installation Steps
+
+1. **Clone the Pantheon repository**:
+    ```bash
+    git clone https://github.com/StanfordSNR/pantheon.git
+    cd pantheon
+    ```
+
+2. **Install dependencies:**
+    ```bash 
+    ./tools/install_deps.sh
+    ./tools/install.sh
+    ```
+
+3. **Install MahiMahi:**
+    ```bash
+    sudo apt-get update && sudo apt-get install mahimahi
+    ```
+
+4. **Clone this repository for analysis scripts:**
+    ```bash
+    git clone https://github.com/vinay-billa-slu/pantheon.git
+    cd pantheon
+    ```
+
+---
+
 Steps to Run Pantheon with Mahimahi
 -----------------------------------
 
@@ -70,7 +97,18 @@ To replicate the experiment setup for **Pantheon** using **Mahimahi**, follow th
         
     *   Use the following command to gather data for the experiment:
         
-5.  **Generate Graphs**:
+5. **Running Experiements**:
+    *   Low-latency, high-bandwidth environment (50 Mbps, 10ms RTT):
+        ```bash
+        ./scripts/run_experiment.sh high-bandwidth
+        ```
+
+    *   High-latency, constrained-bandwidth environment (1 Mbps, 200ms RTT):
+        ```bash
+        ./scripts/run_experiment.sh low-bandwidth
+        ```
+
+6.  **Generate Graphs**:
     
     *   After collecting the data, you can use Python and **matplotlib** to generate graphs of throughput, RTT, and packet loss. Refer to the generate\_graphs.py script for the process.
 
