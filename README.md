@@ -22,17 +22,46 @@ These were the required system specifications for proper Pantheon installation:
 ---
 
 ## Project Structure
-
 ```
-pantheon/
-├── generate_graphs.py            
-├── throughput_time.png
-├── loss_time.png
-├── rtt_avg.png
-├── rtt_95th.png
-├── rtt_vs_throughput.png
-├── loss_rate.png
-└── report.pdf                    
+# Project Structure
+
+## Root Directory
+- `generate_graphs.py` - Script to generate graphs for analysis.
+- `README.md` - Main documentation for the project.
+- `Original_README.md` - Original documentation for reference.
+- `.gitignore` - Specifies files to ignore in version control.
+- `.gitmodules` - Configuration for Git submodules.
+- `.travis.yml` - Configuration for CI/CD with Travis CI.
+- `graphs/` - Directory containing pre-generated graph images.
+
+## `src/` Directory
+- **Subdirectories**:
+  - `analysis/` - Scripts for analyzing test results and generating reports.
+    - `analyze.py` - Main script for analyzing congestion control results.
+    - `plot.py` - Handles plotting throughput-delay graphs.
+    - `report.py` - Generates a PDF report summarizing test results.
+    - `tunnel_graph.py` - Processes tunnel logs and generates graphs.
+  - `experiments/` - Scripts for running experiments and managing logs.
+  - `helpers/` - Utility functions and helpers.
+    - `utils.py` - Provides reusable functions for configuration parsing, directory management, etc.
+  - `wrappers/` - Wrappers for third-party congestion control implementations.
+
+- **Key Files**:
+  - `config.yml` - Configuration file for specifying test parameters.
+
+## `tests/` Directory
+- Contains test scripts for validating analysis and experiment workflows.
+  - `test_analyze.py` - Tests for analyzing congestion control schemes.
+
+## `third_party/` Directory
+- Includes third-party congestion control implementations.
+  - Example: `fillp/`, `fillp-sheep/`.
+
+## `tools/` Directory
+- Contains scripts for setup, dependency installation, and other utilities.
+
+## `graphs/` Directory
+- Stores generated graph images (e.g., throughput, RTT, loss).                   
 ```
 
 ---
