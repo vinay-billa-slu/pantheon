@@ -5,8 +5,6 @@
 
 This project analyzes and compares the performance of three TCP congestion control protocols: **CUBIC**, **BBR**, and **Sprout**, using the **Pantheon** framework with **Mahimahi** for emulated testing.
 
-Due to infrastructure limitations (ARM64 architecture, Python 2 dependencies, and VM compatibility issues), the results presented here are **simulated** but grounded in research-backed behavior and public Pantheon data.
-
 ---
 
 ## Requirements
